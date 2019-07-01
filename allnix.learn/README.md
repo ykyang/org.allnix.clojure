@@ -18,6 +18,11 @@ In emacs, run
 Load Cider mode: alt-cider-jack-in
 Run: ctrl-c-k
 
+https://cider.readthedocs.io/en/stable/interactive_programming/
+Eval form: ctrl-c-e 
+Eval region: ctrl-c-v r
+
+
 ## Installation
 
 Download from http://example.com/FIXME.

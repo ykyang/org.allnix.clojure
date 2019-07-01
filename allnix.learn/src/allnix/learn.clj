@@ -13,9 +13,13 @@
 ;; Clojure Syntax
 (set "aeiou") ; set can be used as a function
 (def vowel? (set "aeiou"))
-(vowel? \b)
-
-((set [1 2 3]) 5)
+(vowel? \b) ; \b
+(defn pig-latin [word] ; define a function
+  ; word: string
+  ; 
+  (let [first-letter (first word)])
+  (println first-letter)
+)
 
 
 ; Region
