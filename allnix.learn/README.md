@@ -1,4 +1,23 @@
 # allnix.learn
+## Edit
+### Markdown
+
+* zr: reduces fold level
+* zR: opens all folds
+
+
+### Vim
+* `ctrl-o` in INSERT to run one NORMAL command
+* `gg` in NORMAL to go to the beginning
+* `G` in NORMAL to go to the end
+* `0` in NORMAL beginning of the line
+* `$` NORMAL end of the line
+* `a` NORMAL append where cursor is
+* `A` NORMAL append the end of line
+* `o` in NORMAL to start a new line
+* `O` in NORMAL to start a new line one line before
+* `:ls` list buffers
+* `:b number` switch buffer
 
 ## Create
 Created with: 
