@@ -18,7 +18,8 @@
 * `O` in NORMAL to start a new line one line before
 * `:ls` list buffers
 * `:b number` switch buffer
-
+* `ctrl-n ctrl-p` code completion
+* `ctrl-x ctrl-o` omni-complete then `ctrl-n ctrl-p enter`
 ## Create
 Created with: 
 ```

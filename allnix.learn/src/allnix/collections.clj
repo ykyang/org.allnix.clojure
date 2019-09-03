@@ -1,3 +1,4 @@
+(ns allnix.learn (:gen-class))
 [1 2 3]
 
 ; Indexed access
@@ -100,3 +101,26 @@
 (assoc person :occupation "Baker")
 ; Removing a field
 (dissoc person :age)
+
+; Nested entities
+(def company
+  {:name "WidgetCo"
+   :address {:street "123 Main St"
+             :city "Springfield"
+             :state "IL"
+             }
+   }
+  )
+(get-in company [:address :city])
+(assoc-in company [:address :street] "303 Broadway")
+
+; Records
+(defrecord Person [first-name last-name age occupation])
+(def kelly (->Person "Kelly" "Keen" 32 "Programmer"))
+(def rob (map->Person
+           {:first-name "Robert"
+            :last-name "Lee"
+            :age 37
+            :occupation "Developer"
+                       }))
+
