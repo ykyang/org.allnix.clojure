@@ -20,6 +20,8 @@
 * `:b number` switch buffer
 * `ctrl-n ctrl-p` code completion
 * `ctrl-x ctrl-o` omni-complete then `ctrl-n ctrl-p enter`
+* `"*y` or `"+y` copy to system clipboard
+* `"*p` or `"+p` paste from system clipboard
 ## Create
 Created with: 
 ```
