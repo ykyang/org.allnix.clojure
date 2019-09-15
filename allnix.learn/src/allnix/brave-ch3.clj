@@ -157,12 +157,46 @@
                              {:name "left-foot" :size 2}])
 
 (defn matching-part
-  [part]
-  (let [name (clojure.string/replace (:name part) #"^left-" "right-")]
-   {:name name :size (:size part) }
-    )
+"Replace 'left-' with 'right-' of the value of :name
 
+ part {}: A map with key :name"
+  [{:keys [name] :as part}]
+  (let [new-name (clojure.string/replace name #"^left-" "right-")]
+;   {:name name :size (:size part) }
+     (assoc part :name new-name) ; this is better than right?
+     )
   )
+
+(matching-part {:name "left-foot" :size 2} ) ; {:name "right-foot", :size 2}
+(matching-part {:name "head" :size 1}) ; no change
+
+(defn symmetrize-body-part
+  "Accept a sequence of maps that have :name and :size.  For each :name that starts with 'left-' creates a map with :name starts 'right-'"
+  [asym-parts]
+  (loop [remaining-asym-parts asym-parts
+         final-parts []]
+    (if (empty? remaining-asym-parts)
+      ; empty
+      final-parts
+      ; not empty
+      (let [[part & remaining] remaining-asym-parts] ; get the first item
+        (recur 
+          ; first loop binding 
+          remaining
+          ; second loop binding
+          (let [part2 (matching-part part)]
+            ; part could be the same as part 2 so we need to use
+            ; set [part part2]
+            (into final-parts (set [part part2]))
+            )
+          )
+        )
+      )
+    )
+  )
+(println asym-hobbit-body-parts)
+(symmetrize-body-part asym-hobbit-body-parts )
+
 
 ; let
 (def dalmatian-list ["Pongo" "Perdita" "Puppy-1" "Puppy-2"])
@@ -186,3 +220,29 @@
   )
 ;; Regular Expressions
 (re-find #"^left-" "left-eye")
+(re-find #"^left-" "right-eye")
+(clojure.string/replace "left-eye" #"^left-" "right-") ; -> right-eye 
+(clojure.string/replace "eye" #"^left-" "right-") ; -> eye
+
+;; reduce
+(reduce + [ 1 2 3])
+
+(defn add-matching-part
+  "Add matching part to total body part
+
+total-body-part: list of body parts
+part {}: A body part {:name :size}"
+  [total-body-part part]
+  (let [part2 (matching-part part)]
+    (into total-body-part (set [part part2]))
+    )
+  )
+(add-matching-part [] {:name "left-eye" :size 1})
+(add-matching-part [] {:name "head" :size 2})
+(defn symmetrize-body-part-2
+  "Accept a sequence of {:name :size}"
+  [asym-body-parts]
+  (reduce add-matching-part [] asym-body-parts)
+
+  )
+(symmetrize-body-part-2 asym-hobbit-body-parts)

@@ -75,10 +75,14 @@
 ;; Recursion
 ; Recursion and Iteration
 ; loop and recur
-(loop [i 0]
-  (if (< i 10) 
-    (recur (inc i))
-    i
+(loop [i 0
+       j 100
+       ]
+  (if (< i 10)
+   (do  
+     ;(print i j)
+     (recur (inc i) (inc j))); the order is important
+    [i j]
     )
   )
 
