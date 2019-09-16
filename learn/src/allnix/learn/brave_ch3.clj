@@ -1,4 +1,4 @@
-(ns allnix.learn (:gen-class))
+(ns allnix.learn.brave-ch3)
 
 (+ 1 2 3)
 

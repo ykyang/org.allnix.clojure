@@ -1,4 +1,4 @@
-(ns allnix.learn (:gen-class))
+(ns allnix.learn.brave_ch6)
 (clojure.core/refer-clojure)
 
 ; *ns* Current name space
@@ -11,7 +11,7 @@
 (get (ns-interns *ns*) 'great-book) ; #' ref to a variable
 
 ; de-reference
-(deref #'allnix.learn/great-book)
+(deref #'allnix.learn.brave_ch6/great-book)
 
 ; Creating and Switching to Namespaces
 
@@ -22,13 +22,13 @@
 
 ; in-ns
 (in-ns 'cheese.taxonomy)
+(clojure.core/print "Hello")
 (def cheddars ["mild" "medium"])
 (def bries ["Wisconsin" "Somerset"])
 
-(in-ns 'allnix.learn)
+(in-ns 'allnix.learn.brave_ch6)
 
 (refer 'cheese.taxonomy)
 (println cheddars)
 
-(refer 'cheese.taxonomy :only [])
 (println cheddars)
