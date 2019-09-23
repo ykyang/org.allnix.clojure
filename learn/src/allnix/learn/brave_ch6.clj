@@ -1,34 +1,16 @@
-(ns allnix.learn.brave_ch6)
+(ns allnix.learn.brave-ch6)
 (clojure.core/refer-clojure)
 
-; *ns* Current name space
-(print *ns*) ; object of current namespace
-(print (ns-name *ns*)) ; name of current namespace
-
 (def great-book ["East of Eden" "The Glass Bead Game"])
+(def ns-interns-ch6 (ns-interns *ns*)) ; what the ns looks like
 
-(ns-interns *ns*)
-(get (ns-interns *ns*) 'great-book) ; #' ref to a variable
-
-; de-reference
-(deref #'allnix.learn.brave_ch6/great-book)
-
-; Creating and Switching to Namespaces
-
-
-; create-ns
-
-; ns-name
-
-; in-ns
-(in-ns 'cheese.taxonomy)
-(clojure.core/print "Hello")
-(def cheddars ["mild" "medium"])
-(def bries ["Wisconsin" "Somerset"])
-
-(in-ns 'allnix.learn.brave_ch6)
-
-(refer 'cheese.taxonomy)
-(println cheddars)
-
-(println cheddars)
+(def heist-list [{:location "Cologne, Germany"
+                  :cheese-name "Archbishop Hildebold's Cheese Pretzel"
+                  :lat 50.95
+                  :lng 6.97}
+                 {:location "Zurich, Switzerland"
+                  :cheese-name "The Standard Emmental"
+                  :lat 47.37
+                  :lng 8.55}
+                 
+                 ])
