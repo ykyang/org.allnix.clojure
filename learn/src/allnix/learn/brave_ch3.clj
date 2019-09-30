@@ -1,27 +1,8 @@
 (ns allnix.learn.brave-ch3)
 
-(+ 1 2 3)
 
 
-(require '[infix.macros :refer :all]) ; TODO: learn what the heck is this
-(refer 'infix.macros :only '[infix from-string])
-(infix 5 + 6)
 
-; when
-(when true
-  (println "Success!")
-  "abra cadabra"
-  )
-
-; nil, true, false ...
-(nil? 1)
-(nil? nil)
-(if "str"
-  "str is truthy"
-  )
-(if nil
-  "nil is falsey"
-  )
 
 ; equality, and, or
 (= 1 1)

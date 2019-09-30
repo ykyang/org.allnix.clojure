@@ -26,7 +26,7 @@
 (println (deref #'allnix.learn.brave-ch6/great-book))
 
 (svg/latlng->point {:lat 12 :lng 95})
-(svg/points heist-list)
+(svg/points ch6/heist-list)
 
 
 

@@ -12,5 +12,4 @@
                   :cheese-name "The Standard Emmental"
                   :lat 47.37
                   :lng 8.55}
-                 
                  ])
